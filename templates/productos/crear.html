@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; }
+        input { width: 100%; padding: 9px; margin: 6px 0 16px; border: 1px solid #ccc;
+                border-radius: 4px; box-sizing: border-box; }
+        button { padding: 10px 20px; background: #4a90e2; color: white;
+                 border: none; border-radius: 4px; cursor: pointer; }
+        a { color: #4a90e2; }
+    </style>
+</head>
+<body>
+    
+    <h2>Crea un nuevo Producto</h2>
+    <form action="/crear" method="POST">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre"><br>
+        <label for="">Precio</label>
+        <input type="number" name="precio"><br>
+        <label for="">Stock</label>
+        <input type="number" name="stock"><br>
+
+        <button type="submit" >Guardar</button>
+        <a href="/">Cancelar</a>
+    </form>
+</body>
+</html>

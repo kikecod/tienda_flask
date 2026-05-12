@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px 14px; border: 1px solid #ddd; text-align: left; }
+        th { background: #4a90e2; color: white; }
+        tr:nth-child(even) { background: #f5f5f5; }
+        a.btn, button { padding: 8px 14px; border: none; border-radius: 4px;
+                        cursor: pointer; text-decoration: none; font-size: 14px; }
+        a.btn-primary { background: #4a90e2; color: white; }
+        a.btn-warning { background: #f0ad4e; color: white; }
+        button.btn-danger { background: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Mis productos</h2>
+    <a href="/crear">+ Nuevo Producto</a>
+    <table border = 1 >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in productos %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.nombre }}</td>
+                <td>{{ p.precio }}</td>
+                <td>{{ p.stock }}</td>
+                <td>
+                    <a href="/editar/{{ p.id }}">Editar</a>
+                    <form action="/eliminar/{{ p.id }}" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
